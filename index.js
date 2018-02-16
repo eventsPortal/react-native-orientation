@@ -35,6 +35,14 @@ module.exports = {
     });
   },
 
+  startGenerateNotifications() {
+    Orientation.startGenerateNotifications();
+  },
+
+  stopGenerateNotifications() {
+    Orientation.stopGenerateNotifications();
+  },
+
   lockToPortrait() {
     Orientation.lockToPortrait();
   },

@@ -172,6 +172,20 @@ RCT_EXPORT_METHOD(lockToPortraitReverse)
 
 }
 
+RCT_EXPORT_METHOD(startGenerateNotifications)
+{
+  [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+  }];
+}
+
+RCT_EXPORT_METHOD(stopGenerateNotifications)
+{
+  [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
+  }];
+}
+
 RCT_EXPORT_METHOD(lockToLandscape)
 {
   #if DEBUG

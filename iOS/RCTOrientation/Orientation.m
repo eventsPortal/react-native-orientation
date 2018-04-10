@@ -153,7 +153,6 @@ RCT_EXPORT_METHOD(lockToPortrait)
   #endif
   [Orientation setOrientation:UIInterfaceOrientationMaskPortrait];
   [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
-    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger: UIInterfaceOrientationPortrait] forKey:@"orientation"];
   }];
 
@@ -166,7 +165,6 @@ RCT_EXPORT_METHOD(lockToPortraitReverse)
   #endif
   [Orientation setOrientation:UIInterfaceOrientationPortraitUpsideDown];
   [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
-    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger: UIInterfaceOrientationPortraitUpsideDown] forKey:@"orientation"];
   }];
 
@@ -175,7 +173,6 @@ RCT_EXPORT_METHOD(lockToPortraitReverse)
 RCT_EXPORT_METHOD(startGenerateNotifications)
 {
   [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
-    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
   }];
 }
 
